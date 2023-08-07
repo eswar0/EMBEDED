@@ -1,0 +1,129 @@
+EMBEDED SYSTEM:- it is microcontroller or microprocessor based software controlled,reliable and real time control system.
+** Often, embedded systems are used in real-time operating environments and use a real-time operating system (RTOS) to communicate with the hardware.
+
+Embeded systems mainly consists of three components:-
+1) Hardware
+2)software
+3)real time operating system (RTOS) which define how the system works by supervising the software by setting rules in the time of program execution.[they are not always included in embeded systems 
+   especially in small scale systems].
+
+
+RTOS HAS 3 TYPES:-
+hard RTOS:- it is used when we need to complete the task in given deadline immediatley if its not done then it considerd to be a failure system
+EXAMPLE :- airbags systems, if in time of accident if they were delayed opening then the system is failure
+soft RTOS :- it is used where few delays in time are acceptable but the tasks which are not done after the specified time also it is considered to be failure
+EXAMPLE :- calling or reciving a call can delay it doesnt cause much damage.
+firm RTOS :- it is between hard and soft rtos .
+EXAMPLE :- video conferencing.
+
+In terms of hardware, a basic embedded system would consist of the following elements:
+Sensors  convert physical sense data into an electrical signal.
+Analog-to-digital (A-D) converters change an analog electrical signal into a digital one.
+Processors process digital signals and store them in memory.
+Digital-to-analog (D-A) converters change the digital data from the processor into analog data.
+Actuators compare actual output to memory-stored output and choose the correct one.
+
+MICROPROCESSOR :- it is an integrated circuit which performs ALU operations and communicates with other device connected with it.CPU built on single integrated circuit.
+basically it has ALU, control unit, register array.
+
+BASIC TERMS USED IN MICROPROCESSOR:-
+BUS :- it is a set of conductors intended to transfer data or address or control information to different elements in microprocessor.it has three types 1)data bus 2)control bus 3)address bus
+INSTRUCTION SET :- it is the set of commands that microprocessor can understand and it is the interface between software and hardware.
+WORD LENGTH :- it is the number of bits the processor can process at a time.
+CLOCK SPEED :- the speed in which  processor can perform operations in one second, Simply it is the speed in which microprocessor can execute the instructions.
+MP uses clock signal to control the speed of the instructions execution.
+
+CLASSIFICATION OF MICROPROCESSOR :-
+SCALAR AND SUPERSCALAR PROCESSORS
+SCALAR:- processor that executes scalar data is scalar processor.simple scalar processor can process only integer instruction using fixed operands, whereas powerscalar can process both intger a
+and floating point numbers also.
+RISC AND CISC are scalar processors.
+RISC(Reduced instruction set computer microprocessor):-it has reduced set of instructions and consists large number of registers and has large program and more ram usage and fixed length 
+instructions and fixed number of clock cycles to execute one instruction.The compiler has to work more
+CISC(complex instruction set computer microprocessor):- it has complex instruction set and less registers and has small program and less ram usage and variable length instructions and
+variable number of clock cycles to execute one instruction.The compiler has to work less.
+SUPERSCALAR :- processor that has multiple pipelines and can execute more than one instruction per clockcycle.
+
+DSP(digital signal processors):- these convert analog signal to digital signal. Mainly used in music audio synthesis and video signal processing and 2D and 3D graphics accelration.
+COPROCESSOR :- it is designed to supplement the capabilites of the primary processor.By offloading processor-intensive tasks from the main processor, coprocessors can
+accelerate system performance.
+TRANSPUTER(transistor computer):- it is a special microprocessor that is designed with its own local memory in it and having links within it to communicate between one transputer to other 
+transputer.
+
+
+
+MICROPROCESSOR ARCHITECTURE:- 8085
+
+*intel 8085 processor is an 8 bit processor designed in 1976
+*its address bus is 16 bit wide
+*its data bus and ALU are of 8 bit
+* it has 40 pins
+* it has 80 instructions
+* requires 5V power supply
+* it can operate with clock speed of 3MHz, sometimes with 5MHz
+
+\\
+ALU(arithemetic and logic unit):- arithematic and logic functions are done. It has two temporary registers(ACT & TMP) which stores data temporarly during the time of execution and these are not accessible
+by the programmer.
+
+TIMING AND CONTROL UNIT:- it is used to control the data flow between cpu and other peripherals(memory,I/O,etc..).it is used to control timing signals also.
+control signals:-
+	READY:- it senses wether a peripheral is ready or not to transfer the data, if it is 1 then it is ready to transfer the data, if it is 0 then it waits till it becomes 1
+	RD:- read operation, if its 0 then the selected memory or I/O is read, if its 1 then it has to be read
+	WR:- write operation, if its 0 then the data is written into memory or I/O
+      ALE(address latch enable):- it goes high for the first T state of machine cycle and enables lower 8 bit of address
+status signals :- 
+	IO/M:- it determines wether the adress is for I/o or memory.if it 1 then the address is for IO device, if its 0 then the addres is for memory device.
+DMA signals:-
+	HOLD:- it indicates that other device is requesting acess of data bus and address after hold is gone the signal processor regains the bus
+	HLDA:- it indicates when hold request is recieved, it is set to 0 when hold signal is gone.
+RESET signals:-
+	RESETIN:- when its 0 then the program counter is set to 0 and bus and mpu is reset
+	RESETOUT:- this signal indicates when the MPU is being reset and it is used to reset other devices also.
+
+GENERAL PURPOSE REGISTERS:-B,C,D,E,H,L are 8bit registers where as W,L are temporary 8 bit registers
+	pairs BC,DE,HL,WZ together can be 16 bit register pairs.
+	HL is a data pointer which holds memory address.
+
+PC(PROGRAM COUNTER):- it is 16bit register used to store memory address location of the next instructoin to be executed.MP increments PC when an instruction is being executed so that 
+	                it point to the instruction which has to be executed next.
+
+STACK POINTER:- it is a 16bit register like stack increments and decrements by 2 during push and pop operations.
+
+FLAG REGISTER:- it is 8bit register having 1 bit five flipflops.which holds 0 or 1 values.
+                those 5 are:-
+	SIGN FLAG:- 1-MSB 1
+	            0-MSB 0
+	ZERO FLAG:- 1-result 0
+	            0-non 0 result
+	AUXILARY CARY FLAG :- 1 carry on addition or borrow on subtraction
+	                      0 otherwise
+	PARITY FLAG :- if result has even parity its 1, if parity is odd p is cleared.
+	CARRY FLAG:- if carry is there then its 1.
+
+INSTRUCTION REGISTER and DECODER :- when an instruction is fetched from the memory then its stored in instruction register and decoder decodes the info in instructoin register.
+
+DATA BUS AND ADDRESS BUS:- data bus carris the data to be stored and its bidirectional whereas address bus carries the location to where it has to be stored and its unidirectional
+**in 16bit address the 8 most significant bits are transferred by address bus and 8 least significant bits are transferred by address and data bus.
+
+INTERRUPT CONTROL :- when the MP is executing the main program and when interrupt occurs it goes there and finish the interrupt program and comes back to the main program.
+	             INTR,TRAP,RST5.5,RST6.5,RST7.5
+classification interrupt signals :-
+	VECTOR INTERRUPT:- in this interrupt address is already known to the processor(TRAP,RST5.5,RST6.5,RST7.5).
+	NON-VECTOR INTERRUPT :- in this interrpt address in not known to the processor so the interupt adress has to be sent externally to perform interupt operation(INTR)
+	MASKABLE INTERRUPT :- we can disable the interrupt by writing some instructions into the program(INTR,RST5.5,RST6.5,RST7.5).
+	NON-MASKABLE INTERRUPT :- we cannot disable the interrupt by writing some instructions into the program (TRAP).
+	HARDWARE INTERRUPT:- there are 5 interrupt pins in 8085 ( INTR,TRAP,RST5.5,RST6.5,RST7.5)
+	SOFTWARE INTERRUPT :- in this programmerhas to write some instructionsto get interrupts and there are 8 software interrupts in 8085(RST0 to RST7).
+	ISR(interrupt service routine):- a small program or routine that when executed services the corresponding interrupting source.
+
+ASSEMBLY LANGUAGE OF 8085 :-
+
+EXAMPLE :- (mvi a,b)- here mvi is OPCODE and a,b are operands.
+MNEMONICs are basically abbrevations/commands to specify the instruction(same as opcode)
+*mnemonic is a symbolic name for a single executable machine language instruction (an opcode), and there is at least one opcode mnemonic defined for each machine language instruction. 
+EXAMPLES:- 3C is an opcode and INR b is a mnemonic
+
+
+
+
