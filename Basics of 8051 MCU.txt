@@ -113,7 +113,7 @@ TMOD REGISTER:- timermode register is an 8bit register used to configure the ope
 TCON REGISTER:- timercontrol register is an 8bit register used to control the operations of the timer.the upper 4bits are responsible for timer/counter and lower 4bits for interrupts.
 	*the bits in tcon are used to start and stop the timer,and to set the interupts when the timer overflows.
 
-	okokok
+	
 
 
 
